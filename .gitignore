@@ -18,3 +18,7 @@ main.sdx
 main.toc
 main.wdx
 texput.log
+
+chapters/01.aux
+chapters/02.aux
+chapters/03.aux
