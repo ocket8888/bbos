@@ -2,6 +2,7 @@ authorindex.sty
 authorindex.tex
 dtklogos.log
 dtklogos.sty
+.gitignore.swp
 libertine.sty
 main.adx
 main.aux
@@ -20,5 +21,6 @@ main.wdx
 texput.log
 
 chapters/01.aux
+chapters/.01.tex.swp
 chapters/02.aux
 chapters/03.aux
