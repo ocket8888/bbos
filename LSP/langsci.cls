@@ -910,7 +910,7 @@ al desirabilite de un nov lingua franca: On refusa continuar payar custosi tradu
 \ifx\lsOutput\lsOutputInprep{}
 \else{
 	\ifx\lsOutput\lsOutputGuidelines{}
-	\else{\lsImpressum}
+	%\else{\lsImpressum}
 	\fi}
 \fi
 %%%%%%%%%%%%%
