@@ -5,10 +5,10 @@ Add content in chapters/01.tex.
 
 \section{Functions}
 Functions are incredibly useful constructs throughout mathematics, the natural sciences, and in particular
-computer science. Functions take any number of inputs, usually performing operations on those inputs to
+computer science. Functions take any number of inputs, or arguments, usually performing operations on those arguments to
 produce an output. The definition of a function takes the following form:
 \begin{center}
-\begin{lstlisting}[language=C]
+\begin{lstlisting}[language=C,caption=Function Example,label=lst:funcEx]
 type FunctionName[type ArgumentName0, type ArgumentName1, ... type ArgumentNameN]{
 	Operations
 	Possibly Output
@@ -16,3 +16,20 @@ type FunctionName[type ArgumentName0, type ArgumentName1, ... type ArgumentNameN
 \end{lstlisting}
 \end{center}
 
+As seen above, the first word is "type," which refers to the type of data that the result, or output, of the function will be. In later chapters we will define more of these datatypes, but for now we'll introduce the most simple.
+"void" is the type of data that doesn't exist. That is to say, a function of type void not produce a result, and is typically used only to modify the arguments.
+It should be noted that an argument cannot be of this type, as it's kind of nonsensical to pass no information as an argument. \\
+The second word is "FunctionName," which is, perhaps obviously, a placeholder for the name of the function. A reader with any amount of experience with trigonometry will recognize the function name Sine, for example. When using a function, only the name of and arguments to the function need be provided for its use to be complete and valid. \\
+After the function name, a list of comma-separated arguments, with their own types, are specified. A function may take any number of arguments, but the most common is simply one. In cases of multiple arguments the order of the arguments is important. A datum of type A may not be passed to a function that only accepts one argument of type B. Similarly, a function that takes one argument of type A, and then an argument of type B cannot be used on one argument of type B, and then an argument of type A. \\
+The placeholders "Operations" and "Possibly Output" are contained within curly braces (\{ and \}). This serves to make entirely explicit the operations that the function performs, so that they may not be confused with any work done directly beneath them. \\
+Functions are used in a similar manner to this throughout many computer science languages. Specifically, those familiar with Java or C may find 
+\ref{lst:funcEx} to be reminiscent of those languages. Please note that the above is NOT representative of any programming language, it is merely a way of organizing definitions of mathematical operations.
+The way a function is used is called "calling" that function, and it takes the following form:
+\begin{center}
+\begin{lstlisting}[language=C, caption=Function Call Example, label=lst:funcCallEx]{
+FunctionName[ArgumentName0, ArgumentName1, ... ArgumentNameN]
+}
+\end{lstlisting}
+\end{center}
+The first word this time is "FunctionName," which differs from \ref{lst:funcEx} in that it does not specify a type. Since you cannot use a function that does not exist, the type of the function's result has already been set, and does not need to be specified again. \\
+This function call also differs from \ref{lst:funcEx} in that it's arguments are not typed. Just as the function type need not be respecified, the type of the arguments has already been decided, and the burden of remembering which arguments are what type rests on the shoulders of the person writing the function call.
