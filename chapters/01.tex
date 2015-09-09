@@ -94,7 +94,7 @@ wn PredecessorFunction[wn x]{
 \end{center}
 The Predecessor Function, it would seem, only undoes the Successor Function, and as such is sometimes called the Inverse Successor Function. Like with addition, it may be useful to think of the operation of subtraction as an implementation of this function.
 \begin{center}
-\begin{lstlisting}
+\begin{lstlisting}[language=C,caption=Minus One Function,label=lst:minusOneFunc]
 wn MinusOne[wn x]{
 	return PredecessorFunction[x];
 }
@@ -103,11 +103,14 @@ wn MinusOne[wn x]{
 The above function can be used to describe $x-1$, and in general subtraction of a whole number x from a whole number y is defined as calling the Predecessor Function x times on y, given the form $y-x$. \\
 It is now easy to define all negative numbers as simply a number for which the operations of the Successor Function and the Predecessor Function are switched. That is to say that for a number x and a number y, $y+x=y- Negative x$. There exists then a number z for every y such that $y+z=0$, which means that when adding the negative number z to y, the Predecessor Function is called on y exactly as many times as the Successor Function must be called on $0$ to obtain the value y. This is the definition of Negative y, meaning $z=Negative y$ \\
 Because whole numbers obey the original definitions of addition and subtraction, these new negative numbers cannot be said to be whole numbers. The name of these new numbers, in conjunction with the whole numbers, is "integers" (abbreviated "int" in mathematical expressions). \\
-It is implied, of course, that this means that calling the Predecessor Function x times on $0$ produces Negative x, that is to say that $0-1=Negative 1$. Furthermore, because writing out "Negative" every time subtraction is used can get a bit cumbersome and cluttered, and so due to their unique property that adding is subtracting and subtracting is adding, negative numbers are written in the notation
+It is implied, of course, that this means that calling the Predecessor Function x times on $0$ produces Negative x, that is to say that $0-1=Negative 1$. Furthermore, because writing out "Negative" every time subtraction is used can get a bit cumbersome and cluttered, and because of their unique property that adding is subtracting and subtracting is adding, negative numbers are written in the notation
 \begin{center}
 $Negative x = -x$
 \end{center}
 This is because there is an implicit $0$ to the left of the $-x$, which is ommitted simply because that too would get repetative, and only the symbol '$-$' is required to indicate the negativity of an integer x. For integers, it can be seen that the statement $x-y$ is equivalent to the statement $x+Negative y = x+ -y$
+
+\section{Sets}
+A set isn't so much a datatype as a way of organizing data. Sets are useful throughout all fields of natural sciences, computer science, math and logic as a way of describing large (sometimes infinite) amounts of data. A set contains only information on the unique objects it contains, and not any information about the ordering thereof. For example, suppose I have a set A that initially contains nothing, which incidentally has its own symbol: $\varnothing$.
 
 
 
