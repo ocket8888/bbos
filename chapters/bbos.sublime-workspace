@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Pred",
+				"PredecessorFunction"
+			],
+			[
 				"Argum",
 				"ArgumentNameN"
 			],
@@ -31,7 +35,7 @@
 			"file": "01.tex",
 			"settings":
 			{
-				"buffer_size": 3790,
+				"buffer_size": 11895,
 				"line_ending": "Unix"
 			}
 		},
@@ -40,6 +44,14 @@
 			"settings":
 			{
 				"buffer_size": 2614,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/ocket8888/git/bbos/localpackages.tex",
+			"settings":
+			{
+				"buffer_size": 999,
 				"line_ending": "Unix"
 			}
 		}
@@ -98,8 +110,6 @@
 	"expanded_folders":
 	[
 		"/home/ocket8888/git/bbos",
-		"/home/ocket8888/git/bbos/LSP",
-		"/home/ocket8888/git/bbos/LSP/lsp-seriesinfo",
 		"/home/ocket8888/git/bbos/chapters"
 	],
 	"file_history":
@@ -167,15 +177,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3790,
+						"buffer_size": 11895,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3786,
-								3786
+								11864,
+								11864
 							]
 						],
 						"settings":
@@ -183,7 +193,7 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 134.0,
+						"translation.y": 2335.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -211,10 +221,38 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 96.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/ocket8888/git/bbos/localpackages.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 999,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								998,
+								998
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

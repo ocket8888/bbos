@@ -111,9 +111,57 @@ This is because there is an implicit $0$ to the left of the $-x$, which is ommit
 
 \section{Sets}
 A set isn't so much a datatype as a way of organizing data. Sets are useful throughout all fields of natural sciences, computer science, math and logic as a way of describing large (sometimes infinite) amounts of data. A set contains only information on the unique objects it contains, and not any information about the ordering thereof. For example, suppose I have a set A that initially contains nothing, which incidentally has its own symbol: $\varnothing$.
+\begin{center}
+\begin{figure}[h]
+\caption{Set A} \label{fig:setAEmpty}
+\includegraphics[scale=0.5]{figures/setAEmpty.png}
+\end{figure}
+\end{center}
 
+Now suppose I add the integer $1$ to set A.
+\begin{center}
+\begin{figure}[h]
+\caption{Set A} \label{fig:setA1}
+\includegraphics[scale=0.5]{figures/setA1.png}
+\end{figure}
+\end{center}
 
+If I were to try to add $1$ to set A again, this is what set A would look after I attempt that operation:
 
+\begin{center}
+\begin{figure}
+\caption{Set A} \label{fig:setA1_0}
+\includegraphics[scale=0.5]{figures/setA1.png}
+\end{figure}
+\end{center}
+
+See, the set remains unchanged upon adding an element that it already contains. \emph{A set only contains information about the \textbf{unique} items it contains}. \\
+Now suppose that I added the integer $2$ to this set.
+
+\begin{center}
+\begin{figure}
+\caption{SetA} \label{fig:setA12}
+\includegraphics[scale=0.5]{figures/setA12.png}
+\end{figure}
+\end{center}
+
+As seen above, there is no notion of the order or rank of the elements of A. Even though $1$ was added to the set before $2$, $1$ holds no special position, and the two integers are treated equally. There is a special, named set for the set that contains all whole numbers, denoted $\mathbb{W}$, and the set that contains all integers, commonly denoted $\mathbb{Z}$.
+
+\section{Multiplication and Division}
+Before we can continue to build up sets of useful constructs, we first need to define some more operations that can be preformed on integers (specifically division will be of interest later). \\
+
+\subsection{Multiplication}
+Of the two operations that make up the title of this section, multiplication is the easier of the two to explain. The following function describes it in loose terms.
+\begin{center}
+\begin{lstlisting}[language=C,caption=Multiplication Function,label=lst:multFunc]
+int Multiply[int x, int y]{
+	int result = x_1 + x_2 + x_3 ... + x_y;
+	return result;
+}
+\end{lstlisting}
+\end{center}
+
+What this means, in English, is that multiplying x by y returns x added to x y times. For this reason, expressions of the form $x\times y$ are 
 
 
 
