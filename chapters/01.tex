@@ -17,7 +17,7 @@ type FunctionName[type ArgumentName0, type ArgumentName1, ... type ArgumentNameN
 \end{lstlisting}
 \end{center}
 
-As seen above, the first word is "type," which refers to the type of data that the result, or output, of the function will be. In later chapters we will define more of these datatypes, but for now we'll introduce the most simple.
+As seen above, the first word is "type," which refers to the type of data that the result, or output, of the function will be. In later chapters we will define more of these data-types, but for now we'll introduce the most simple.
 "void" is the type of data that doesn't exist. That is to say, a function of type void not produce a result, and is typically used only to modify the arguments.
 It should be noted that an argument cannot be of this type, as it's kind of nonsensical to pass no information as an argument. \\
 The second word is "FunctionName," which is, perhaps obviously, a placeholder for the name of the function. A reader with any amount of experience with trigonometry will recognize the function name Sine, for example. When using a function, only the name of and arguments to the function need be provided for its use to be complete and valid. \\
@@ -107,10 +107,10 @@ It is implied, of course, that this means that calling the Predecessor Function 
 \begin{center}
 $Negative x = -x$
 \end{center}
-This is because there is an implicit $0$ to the left of the $-x$, which is ommitted simply because that too would get repetative, and only the symbol '$-$' is required to indicate the negativity of an integer x. For integers, it can be seen that the statement $x-y$ is equivalent to the statement $x+Negative y = x+ -y$
+This is because there is an implicit $0$ to the left of the $-x$, which is omitted simply because that too would get repetitive, and only the symbol '$-$' is required to indicate the negativity of an integer x. For integers, it can be seen that the statement $x-y$ is equivalent to the statement $x+Negative y = x+ -y$
 
 \section{Sets}
-A set isn't so much a datatype as a way of organizing data. Sets are useful throughout all fields of natural sciences, computer science, math and logic as a way of describing large (sometimes infinite) amounts of data. A set contains only information on the unique objects it contains, and not any information about the ordering thereof. For example, suppose I have a set A that initially contains nothing, which incidentally has its own symbol: $\varnothing$.
+A set isn't so much a data-type as a way of organizing data. Sets are useful throughout all fields of natural sciences, computer science, math and logic as a way of describing large (sometimes infinite) amounts of data. A set contains only information on the unique objects it contains, and not any information about the ordering thereof. For example, suppose I have a set A that initially contains nothing, which incidentally has its own symbol: $\varnothing$.
 \begin{center}
 \begin{figure}[h]
 \caption{Set A} \label{fig:setAEmpty}
@@ -145,7 +145,7 @@ Now suppose that I added the integer $2$ to this set.
 \end{figure}
 \end{center}
 
-As seen above, there is no notion of the order or rank of the elements of A. Even though $1$ was added to the set before $2$, $1$ holds no special position, and the two integers are treated equally. There is a special, named set for the set that contains all whole numbers, denoted $\mathbb{W}$, and the set that contains all integers, commonly denoted $\mathbb{Z}$.
+As seen above, there is no notion of the order or rank of the elements of A. Even though $1$ was added to the set before $2$, $1$ holds no special position, and the two integers are treated equally. There is a special, named set for the set that contains all whole numbers, denoted '$\mathbb{W}$', and the set that contains all integers, commonly denoted '$\mathbb{Z}$'.
 
 \section{Multiplication and Division}
 Before we can continue to build up sets of useful constructs, we first need to define some more operations that can be preformed on integers (specifically division will be of interest later). \\
@@ -161,12 +161,19 @@ int Multiply[int x, int y]{
 \end{lstlisting}
 \end{center}
 
-What this means, in English, is that multiplying x by y returns x added to x y times. For this reason, expressions of the form $x\times y$ are 
+What this means, in English, is that multiplying x by y returns x added to x y times. For this reason, expressions of the form $x\times y$ are typically pronounced "x times y", and the '$\times$' symbol denotes multiplying the left side by the right side. This is often abbreviated, as the $\times$ symbol can be confused with a variable named x, as simply $xy$. This is syntactically unambiguous because all variable and function names require formatting called 'Camel Case' which means that the first letter of the name of the variable or function may be lowercase, but every time another word is added, its first letter must be capitalized. For example, 'thisIsAVariable' is a valid variable name, but 'thisisambiguous' is not. However, because it is common for function and variable names to only be one word long, the $\times$ symbol is often used to delimit them (e.g. $a\times var$).
 
 
-
-
-
+\subsection{Division}
+To put it as simply as possible, division is the operation that undoes multiplication. However, similar to subtraction, order matters. For instance, if z is the output of $x\times y$, then the output of dividing z by x is y. Similarly, the output of z divided by y is x. Because order matters, dividing y by z is \emph{not} the same as dividing z by y. Here is a loosely-written function that helps to describe that process.
+\begin{center}
+\begin{lstlisting}[language=C,caption=Division Function,label=lst:divFunc]
+int DivideBy[int x, int y]{
+	return the integer y is multiplied by to obtain x;
+}
+\end{lstlisting}
+\end{center}
+There are, however, many cases where there is no integer that y can be multiplied by to obtain x. Consider, for example, the division of $5$ by $3$ (there is no integer y such that y times 3 outputs 5). In these cases, the output is left in the form of what is known as a 'fraction'.
 
 
 
