@@ -4,7 +4,7 @@ Simply put, the aim of the Book is to provide a clear, consistent and syntactica
 ## Consistent and Unambiguous
 The information in the Book is guaranteed to never contradict itself in terms or format *or* content. Some of the biggest complaints I have with standards in the math and science community are:
 	
-	* In cheistry a metal is defined as anything that can spontaneously form a cation easier than an anion. In Astronomy, a metal is either Hydrogen or Helium, and anything else is not a metal.
+	* In chemistry a metal is defined as anything that can spontaneously form a cation easier than an anion. In Astronomy, a metal is either Hydrogen or Helium, and anything else is not a metal.
 	* 3-dimensional polar coordinates by field:
 		* Mathematics -
 			* 'r' describes the distance from the origin
