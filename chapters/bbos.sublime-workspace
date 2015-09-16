@@ -35,15 +35,7 @@
 			"file": "01.tex",
 			"settings":
 			{
-				"buffer_size": 11895,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/ocket8888/git/bbos/main.tex",
-			"settings":
-			{
-				"buffer_size": 2614,
+				"buffer_size": 15562,
 				"line_ending": "Unix"
 			}
 		},
@@ -79,16 +71,32 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 369.0,
-		"last_filter": "Package Control: ",
+		"height": 96.0,
+		"last_filter": "Package Control: install",
 		"selected_items":
 		[
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: remove pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: remove p",
+				"Package Control: Remove Package"
+			],
 			[
 				"Package Control: ",
 				"Package Control: Install Package"
 			]
 		],
-		"width": 449.0
+		"width": 575.0
 	},
 	"console":
 	{
@@ -114,6 +122,8 @@
 	],
 	"file_history":
 	[
+		"/home/ocket8888/git/bbos/README.md",
+		"/home/ocket8888/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
 		"/home/ocket8888/git/bbos/main.tex",
 		"/home/ocket8888/git/bbos/LSP/langsci.cls",
 		"/home/ocket8888/git/bbos/LSP/lsp-seriesinfo/seriesinfo.tex",
@@ -177,23 +187,24 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11895,
+						"buffer_size": 15562,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11864,
-								11864
+								15481,
+								15481
 							]
 						],
 						"settings":
 						{
+							"spell_check": true,
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2335.0,
+						"translation.y": 2632.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -201,34 +212,6 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/home/ocket8888/git/bbos/main.tex",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2614,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "/home/ocket8888/git/bbos/localpackages.tex",
 					"semi_transient": false,
 					"settings":
@@ -252,7 +235,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

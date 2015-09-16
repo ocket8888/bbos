@@ -173,13 +173,16 @@ int DivideBy[int x, int y]{
 }
 \end{lstlisting}
 \end{center}
-There are, however, many cases where there is no integer that y can be multiplied by to obtain x. Consider, for example, the division of $5$ by $3$ (there is no integer y such that y times 3 outputs 5). In these cases, the output is left in the form of what is known as a 'fraction'. Fractions take the form $\frac{x}{y}$ or $x/y$ when dividing x by y. The difference between them is accounted for by the versatility of the environment in which it is written, $\frac{x}{y}$ is the preferred form, but $x/y$ may be used when such typesetting is unavailable. To provide consistency with a planned programming language, the form $x/y$ will be used because text editors only support this form. \\
+There are, however, many cases where there is no integer that y can be multiplied by to obtain x. Consider, for example, the division of $5$ by $3$ (there is no integer y such that y times 3 outputs 5). In these cases, the output is left in the form of what is known as a 'fraction'. Fractions take the form $\frac{x}{y}$ or $x/y$ when dividing x by y. The difference between them is accounted for by the versatility of the environment in which it is written, $\frac{x}{y}$ is the preferred form, but $x/y$ may be used when such typesetting is unavailable. \\
 In a base ten number system, it becomes bothersome to always write fractions this way, but to understand it we must first describe some properties of fractions. \\
 The value of a fraction is invariant under multiplication of both the top (called the 'numerator') and the bottom (called the 'denominator') by the same integer. Because division is merely the inverse of multiplication, the same must be true for division.
 \begin{center}
-\begin{equation}
-x / y = \frac{x}{y} = \frac{x\times c}{y \times c} = \frac{x / c}{y / c}
-\end{equation}
+\begin{lstlisting}[language=C,caption=Fraction Properties,label=lst:fracProp,mathescape]
+int x;
+int y;
+int c;
+$x / y = \frac{x}{y} = \frac{x\times c}{y \times c} = \frac{x / c}{y / c}$
+\end{lstlisting}
 \end{center}
 
 
