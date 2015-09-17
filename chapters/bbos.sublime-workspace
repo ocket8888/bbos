@@ -35,7 +35,15 @@
 			"file": "01.tex",
 			"settings":
 			{
-				"buffer_size": 15562,
+				"buffer_size": 16569,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/ocket8888/git/bbos/main.tex",
+			"settings":
+			{
+				"buffer_size": 2614,
 				"line_ending": "Unix"
 			}
 		},
@@ -139,7 +147,7 @@
 	],
 	"find":
 	{
-		"height": 24.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -154,6 +162,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"cannot",
 			"\\lsImpressum",
 			"bbos",
 			"\\newcommand{\\lsSeries}",
@@ -178,7 +187,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -187,31 +196,60 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15562,
+						"buffer_size": 16569,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15481,
-								15481
+								7705,
+								7705
 							]
 						],
 						"settings":
 						{
 							"spell_check": true,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 588.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/ocket8888/git/bbos/main.tex",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2614,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2632.0,
+						"translation.y": 633.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
 					"file": "/home/ocket8888/git/bbos/localpackages.tex",
 					"semi_transient": false,
 					"settings":
@@ -235,7 +273,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
