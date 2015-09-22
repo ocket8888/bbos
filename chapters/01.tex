@@ -147,7 +147,7 @@ Now suppose that I added the integer $2$ to this set.
 
 As seen above, there is no notion of the order or rank of the elements of A. Even though $1$ was added to the set before $2$, $1$ holds no special position, and the two integers are treated equally. There is a special, named set for the set that contains all whole numbers, denoted '$\mathbb{W}$', and the set that contains all integers, commonly denoted '$\mathbb{Z}$'.
 
-\section{Multiplication and Division}
+\section{Multiplication, Division and the Order of Operations}
 Before we can continue to build up sets of useful constructs, we first need to define some more operations that can be preformed on integers (specifically division will be of interest later). \\
 
 \subsection{Multiplication}
@@ -162,15 +162,45 @@ int Multiply[int x, int y]{
 \end{center}
 
 What this means, in English, is that multiplying x by y returns x added to x y times. For this reason, expressions of the form $x\times y$ are typically pronounced "x times y", and the '$\times$' symbol denotes multiplying the left side by the right side. This is often abbreviated, as the $\times$ symbol can be confused with a variable named x, as simply $xy$. This is syntactically unambiguous because all variable and function names require formatting called 'Camel Case' which means that the first letter of the name of the variable or function may be lowercase, but every time another word is added, its first letter must be capitalized. For example, 'thisIsAVariable' is a valid variable name, but 'thisisambiguous' is not. However, because it is common for function and variable names to only be one word long, the $\times$ symbol is often used to delimit them (e.g. $a\times var$). \\
-Multiplication of a number by itself repeatedly is represented in a special way called a 'power'. A power is written with the number of times the base number (appropriately called the 'base') written to the upper-right as a superscript (called the 'exponent'). The following function describes it in a similar way that multiplication was explained in \ref{lst:multFunc}.
+Multiplication of a number by itself repeatedly is represented in a special way called a 'power'. A power is written with the number of times the base number (appropriately called the 'base') written to the upper-right as a superscript (called the 'exponent'). The following function describes it in a similar way that multiplication was explained in \ref{lst:multFunc}. Some interesting properties of powers are that $X^0=1$ for every x of integer type (and actually all real and complex x, but those types of numbers will be discussed later), and $x^{-y}=\frac{1}{x^y}$.
 \begin{center}
 \begin{lstlisting}[language=C,caption=Power Function,label=lst:powFunc,mathescape]
 int Power[int x, int y]{
-	return $x_1 \times x_2 \times x_3$ ... $\times x_y$
+	return $x_1 \times x_2 \times x_3$ ... $\times x_y$;
 }
 \end{lstlisting}
 \end{center}
 The invocation of this function is written in the form '$x^y$' where x is being multiplied by itself y times, also called 'raising x to the y power'.
+
+\subsection{Order of Operations}
+There are some more properties of multiplication that are necessary to understand division in base ten format, but these cannot be discussed without first knowing the Order of Operations. This is a set of rules for what order in which operations are to be preformed, otherwise an expression written by one mathematician could be evaluated differently by another mathematician. The Order of Operations is:
+\begin{center}
+\begin{enumerate}
+	\label{enum:OrderOps}
+	\item{Function Calls}
+	\item{Grouping Symbols}
+	\item{Exponents}
+	\item{Multiplication and Division}
+	\item{Addition and Subtraction}
+\end{enumerate}
+\end{center}
+The order in which these items are placed reflects their priority. For example, given the function definition
+\begin{center}
+\begin{lstlisting}[language=C,caption=PlusFive Example Function,label=lst:pls5Func,mathescape]
+int PlusFive[int x]{
+	return x+5;
+}
+\end{lstlisting}
+\end{center}
+and the expression 
+\begin{center}
+$10 + 2 \times 4 + PlusFive[3]-10+(2-2^2)$,
+\end{center}
+ it might be confusing what the value of the output is without having a canonical way of deciding which operations take precedence over others. In this example, we first look for function calls, and we find PlusFive[3]. Once that is evaluated, the expression becomes 
+ \begin{center}
+ $10+2\times 4+ 8 -10+(2-2^2)$
+ \end{center}
+From here, we must next look for grouping symbols, and the ones we find are those parenthesis. Parenthesis are grouping symbol whose only function is to indicate that the expression within them are to be indicated before the expressions outside them. In this case that expression is $2-2^2$. There are no functions in this expression, so we evaluate the power first, which leaves $2-4$. There's only one operation left, and that leaves $-2$. Now we replace the original grouping symbols with this output: $10+2\times 4+8-10-2$. After grouping symbols, we do multiplication and division from left to right. There's only one multiplication, $2\times 4$, and no division, so evaluating this and placing the output where the operation was leaves only $10+8+8-10-2$ remaining. All that's left is addition and subtraction, resulting in a final output of $14$.
 
 \subsection{Division}
 To put it as simply as possible, division is the operation that undoes multiplication. However, similar to subtraction, order matters. For instance, if z is the output of $x\times y$, then the output of dividing z by x is y. Similarly, the output of z divided by y is x. Because order matters, dividing y by z is \emph{not} the same as dividing z by y. Here is a loosely-written function that helps to describe that process.
@@ -192,8 +222,31 @@ int c;
 $x / y = \frac{x}{y} = \frac{x\times c}{y \times c} = \frac{x / c}{y / c}$
 \end{lstlisting}
 \end{center}
+The fraction is also a type of grouping symbol, which can be useful to avoid clutter caused by parenthesis. This means that
+\begin{center}
+$\frac{x+y}{a+b}$
+\end{center}
+is equivalent to
+\begin{center}
+$(x+y)/(a+b)$
+\end{center}
+for all x, y, a and b. Also, because it's a grouping symbol, any valid expression can exist in either the numerator or the denominator. This means that fractions can be nested, like so:
+\begin{center}
+$\frac{\frac{1}{3}}{5}$ \\
+or \\
+$\frac{a}{\frac{b}{c}}$
+\end{center}
+In a base ten system, these fractions are to be converted to fractions of ten in whatever way is available. For example, $\frac{2}{5}$ can be multiplied by $2$ on the top and bottom to obtain $\frac{4}{10}$ and the fraction $\frac{12}{30}$ can be divided by $3$ on the top and bottom to obtain $\frac{4}{10}$. This fraction can then be represented in the form $0.4$. As may be apparent by now, the base ten system is very closely tied with powers of ten. A number in the first digit is multiplied by $10^0$ (called the "one's" place'), the second digit is multiplied by $10^1$, the third by $10^2$ and so on, then these products are added which gives the full value of the number. When representing fractions in base ten format, a '.' called a decimal point (or sometimes radix point to generalize between base systems) is placed behind the one's place, and to the right of it fractions of $10^{-1}$ are represented without the denominator. This is continuously true for all negative powers of ten, that is to say that two places to the right of the decimal point are fractions of $10^{-2}$, three places to the right lie fractions of $10^{-3}$ and so on. Here are some examples:
+\begin{center}
+$1+\frac{7}{10}=1.7$ \\
+$3+\frac{1}{20}=3+\frac{5}{100}=3.05$ \\
+$1+\frac{6}{25}=1+\frac{24}{100}=1.24$ \\
+\end{center}
+In general, many fractions can be expressed this way because the negative powers of ten keep going to infinity, so even fractions of arbitrarily large denominators can be expressed. Decimal numbers are the preferred way of representing output values, and fractions are only used to indicate division. The set of all integers and all fractions that can be represented as a decimal number forms a special set called the 'Rational Numbers,' and it has its own special symbol: $\mathbb{Q}$.
 
-In a base ten system, these fractions are to be converted to fractions of ten
+\subsection{Real Numbers}
+There is only one step left before the most useful basic data type is defined. Consider a fraction such as $\frac{1}{3}$. This number cannot be expressed as any multiple of any negative power of ten. It is recursively just a little bit bigger than $\frac{3}{10}$, $\frac{33}{100}$, $\frac{333}{1000}$ and so on. However, it's always closer to a numerator constructed of repeating digits of $3$ than one that is constructed of repeating $3$'s that end in a $4$. For this reason, the decimal system can make an approximation that takes the form of $0.33333333333333333333...$ and so on to infinity, which is abbreviated as $0.\overline{3}$.
+
 
 
 
