@@ -1,2 +1,25 @@
-\chapter{Change title for chapter 2 in chapters/02.tex}
-Add content in chapters/02.tex
+\chapter{Formal Syntax and Operators}
+This chapter is not really meant to be read from top to bottom, only to be used as a reference when reading later chapters. If the way anything is worded is confusing, this chapter is meant to act as a guide. Certain similarities to computer science may become apparent in the way that mathematical expressions are written, and this is not a coincidence but it cannot be stressed enough that this is \emph{not} a programming language (yet).
+
+\section{Boolean Logic}
+A basic datatype not covered in Chapter 1, but is also extremely useful is what's known as a 'boolean,' abbreviated 'bool'. This is much simpler to define than a set of numbers, because rather than infinite possible values, there are only two: true or false. This is useful in cases when operations are to be preformed conditionally, or procedurally. For example, the famous Dirac Delta function models the density of a point-mass and has the following form:
+\begin{lstlisting}[language=C,caption=Dirac Delta Function,label=lst:dirdelFunc,mathescape]
+real $\delta$[real x]{
+	if[x==0]{
+		return Infinity;
+	}
+	else{
+		return 0;
+	}
+}
+\end{lstlisting}
+The first thing immediately apparent is the use of the new function 'if'. If is a special function that allows preforming of mathematical operations within the curly braces that follow it if and only if the expression inside of its arguments evaluates to true. If only takes one argument, though there is no limit to the size of the logical expression that can be passed. The special argument-less function else contains within its 
+\subsection{Boolean Operators}
+In order to understand the types of arguments that 'if' can take, we must first define some functions that return bool's. The one used in \ref{lst:dirdelFunc} will be a good place to start.
+\begin{lstlisting}[language=C,caption=Equivalence Function,label=lst:equivFunc,mathescape]
+bool Equivalent[any x, any y]{
+	return true if x is equivalent to y, or false if not;
+}
+\end{lstlisting}
+The symbol '==' is used to denote calling Equivalent[x,y] given the form 'x==y'. This is different than '=' because '=' implies assigning a value, whereas after finding the output of 'x==y' the value of x does not become y, or vice-versa. Note that the type used to pass these arguments is 'any' which predictably means that they may be of any type. This is because it is easy to tell if two things are the same type, and if they are not then they cannot be equivalent, which allows sometimes for very easy evaluation of Equivalent's output. \\
+The next two operators are very similar, and likely very familiar.
