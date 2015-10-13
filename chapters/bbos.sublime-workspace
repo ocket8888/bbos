@@ -43,7 +43,7 @@
 			"file": "02.tex",
 			"settings":
 			{
-				"buffer_size": 2614,
+				"buffer_size": 8196,
 				"line_ending": "Unix"
 			}
 		},
@@ -238,24 +238,25 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2614,
+						"buffer_size": 8196,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1584,
-								1584
+								6951,
+								6951
 							]
 						],
 						"settings":
 						{
 							"spell_check": true,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 85.0,
+						"translation.y": 1887.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -349,12 +350,16 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
-		"last_filter": "",
+		"height": 500.0,
+		"last_filter": "sh",
 		"selected_items":
 		[
+			[
+				"sh",
+				"~/Downloads/shell_outline/shell.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{
