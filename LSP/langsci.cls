@@ -320,7 +320,7 @@ al desirabilite de un nov lingua franca: On refusa continuar payar custosi tradu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{datetime}
-\usepackage{scrpage2}
+\usepackage{scrlayer-scrpage}
 \ohead{\headmark}
 \ihead{}
 \cfoot{}
