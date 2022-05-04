@@ -1,0 +1,9 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns": ["*.idx", "*.log", "*.adx", "*.bib", "*.aux", "*.toc", "*.sdx", "*.rdx", "*.run.xml", "*.wdx", "*.ldx", "*.out"],
+			"path": "."
+		},
+	],
+}

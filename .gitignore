@@ -21,3 +21,5 @@ chapters/.01.tex.swp
 chapters/02.aux
 chapters/03.aux
 wget-log
+
+*.sublime-*
