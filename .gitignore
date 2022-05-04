@@ -23,3 +23,5 @@ chapters/03.aux
 wget-log
 
 *.sublime-*
+
+_minted-*/**

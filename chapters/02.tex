@@ -3,7 +3,7 @@ This chapter is not really meant to be read from top to bottom, only to be used 
 
 \section{Boolean Logic}
 A basic datatype not covered in Chapter 1, but is also extremely useful is what's known as a 'boolean,' abbreviated 'bool'. This is much simpler to define than a set of numbers, because rather than infinite possible values, there are only two: true or false. This is useful in cases when operations are to be preformed conditionally, or procedurally. For example, the famous Dirac Delta function models the density of a point-mass and has the following form:
-\begin{lstlisting}[language=C,caption=Dirac Delta Function,label=lst:dirdelFunc,mathescape]
+\begin{minted}{python}
 real $\delta$[real x]{
 	if[x==0]{
 		return Infinity;
@@ -12,35 +12,35 @@ real $\delta$[real x]{
 		return 0;
 	}
 }
-\end{lstlisting}
+\end{minted}
 The first thing immediately apparent is the use of the new function 'if'. 'if' is a special function that allows preforming of mathematical operations within the curly braces that follow it if and only if the expression inside of its arguments evaluates to true. 'if' only takes one argument, though there is no limit to the size of the logical expression that can be passed.
 \subsection{Boolean Operators}
 In order to understand the types of arguments that 'if' can take, we must first define some functions that return bool's. The one used in \ref{lst:dirdelFunc} will be a good place to start.
-\begin{lstlisting}[language=C,caption=Equivalence Function,label=lst:equivFunc,mathescape]
+\begin{minted}{python}
 bool Equivalent[any x, any y]{
 	return true if x is equivalent to y, or false if not;
 }
-\end{lstlisting}
+\end{minted}
 The symbol '==' is used to denote calling Equivalent[x,y] given the form 'x==y'. This is different than '=' because '=' implies assigning a value, whereas after finding the output of 'x==y' the value of x does not become y, or vice-versa. Note that the type used to pass these arguments is 'any' which predictably means that they may be of any type. This is because it is easy to tell if two things are the same type, and if they are not then they cannot be equivalent, which allows sometimes for very easy evaluation of Equivalent's output. \\
 The next two operators are very similar, and likely very familiar. \\
 The following function is another extremely common argument to 'if'.
-\begin{lstlisting}[language=C,caption=Less Than Function,label=lst:gThanFunc,mathescape]
+\begin{minted}{python}
 bool GreaterThan[num x, num y]{
 	if[x-y is negative]{
 		return false;
 	}
 	return true;
 }
-\end{lstlisting}
+\end{minted}
 Calling this function is typically denoted as 'x>y', this being equivalent to 'GreaterThan[x,y]'. Predictably, this returns true if x is, in fact, greater in value than y. This function has the counterpart LessThan, defined below.
-\begin{lstlisting}[language=C,caption=Less Than Function,label=lst:lThanFunc,mathescape]
+\begin{minted}{python}
 bool LessThan[num x, num y]{
 	if[y-x is negative]{
 		return false;
 	}
 	return true;
 }
-\end{lstlisting}
+\end{minted}
 This function is usually called by writing 'x<y', which is the same as 'LessThan[x,y]'. In contrast to \ref{lst:gThanFunc}, this returns true if x is \emph{less} than y, and false otherwise. \\
 For now, these three operations will be sufficient to describe \ref{lst:dirdelFunc}. However, there are two things that have been left out. First is the value Infinity. Infinity is a real number that has the special properties:
 \begin{itemize}
@@ -60,11 +60,11 @@ This is a comprehensive list of boolean operators and their definitions, as well
 'if' is a special function that allows preforming of mathematical operations within the curly braces that follow it if and only if the expression inside of its arguments evaluates to true. 'if' only takes one argument, though there is no limit to the size of the logical expression that can be passed. \\
 \end{center}
 Example:\\
-\begin{lstlisting}[mathescape,language=C,caption=if Example,label=lst:ifex]
+\begin{minted}{python}
 if[Expression]{
 	Operations;
 }
-\end{lstlisting}
+\end{minted}
 \begin{center}
 If 'Expression' turns out to be true, 'Operations' will be preformed, otherwise they will not.
 \end{center}
@@ -73,14 +73,14 @@ If 'Expression' turns out to be true, 'Operations' will be preformed, otherwise 
 'else if' is a special function that can only appear immediately following an 'if' block or a previous 'else if' block. Unlike 'if', the expression that else if takes as an argument is only evaluated if the previous 'if' or 'else if's expression evaluated to false. This means that if an 'else if' follows an 'else if' who's expression was not evaluated, then that following 'else if's expression is not evaluated and therefore the operations enclosed in curly braces are not preformed.
 \end{center}
 Example:\\
-\begin{lstlisting}[language=C,caption=else if Example,label=lst:elifex,mathescape]
+\begin{minted}{python}
 if[Expression1]{
 	Operations1;
 }
 else if[Expression2]{
 	Operations2;
 }
-\end{lstlisting}
+\end{minted}
 \begin{center}
 In the above example, Operations2 is/are preformed if and only if Expression1 evaluated to true, \emph{and} Expression2 evaluated to false.
 \end{center}
@@ -89,7 +89,7 @@ In the above example, Operations2 is/are preformed if and only if Expression1 ev
 'else' is a special function that takes no arguments, and can \emph{only be placed immediately following an 'if' block}. Note that an 'if' does not require an 'else', the latter is entirely optional. If included, the curly braces following an 'else' enclose a set of operations to be preformed if the argument to 'if' evaluates to false.
 \end{center}
 Example:\\
-\begin{lstlisting}[language=C,caption=else if Example,label=lst:elsex,mathescape]
+\begin{minted}{python}
 if[Expression1]{
 	Operations1;
 }
@@ -99,7 +99,7 @@ else if[Expression2]{
 else{
 	Operations3;
 }
-\end{lstlisting}
+\end{minted}
 \begin{center}
 In the above example, Operations3 is/are preformed if and only if Expression1 and Expression2 both evaluated to false.
 \end{center}
@@ -111,19 +111,19 @@ In the above example, Operations3 is/are preformed if and only if Expression1 an
 '==' takes two inputs, and returns true if they are equivalent, false if they are not.
 \end{center}
 Examples:
-\begin{lstlisting}[language=C,caption=Equivalence Example 1,label=lst:eqex1,mathescape]
+\begin{minted}{python}
 if[$1==2$]{
 	Operations;
 }
-\end{lstlisting}
+\end{minted}
 \begin{center}
 In the above example, Operations is/are not preformed, because $2$ is not equivalent to $1$.
 \end{center}
-\begin{lstlisting}[language=C,caption=Equivalence Example 2,label=lst:eqex2,mathescape]
+\begin{minted}{python}
 if[$1==1$]{
 	Operations;
 }
-\end{lstlisting}
+\end{minted}
 \begin{center}
 In the above example, Operations is/are preformed, because $1$ is equivalent to $1$.
 \end{center}
@@ -132,19 +132,19 @@ In the above example, Operations is/are preformed, because $1$ is equivalent to 
 '<' takes two arguments, and returns true if the first is less than the second, false otherwise.
 \end{center}
 Examples:
-\begin{lstlisting}[language=C,caption=Less Than Example 1,label=lst:ltex1]
+\begin{minted}{python}
 if[$1<2$]{
 	Operations;
 }
-\end{lstlisting}
+\end{minted}
 \begin{center}
 In the above example, Operations is/are preformed, because $1$ is less than $2$.
 \end{center}
-\begin{lstlisting}[language=C,caption=Less Than Example 2,label=lst:ltex2]
+\begin{minted}{python}
 if[$1<1$]{
 	Operations;
 }
-\end{lstlisting}
+\end{minted}
 \begin{center}
 In the above example, Operations is/are not preformed, because $1$ is not less than $1$.
 \end{center}

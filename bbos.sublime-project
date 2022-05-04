@@ -3,7 +3,8 @@
 	[
 		{
 			"file_exclude_patterns": ["*.idx", "*.log", "*.adx", "*.bib", "*.aux", "*.toc", "*.sdx", "*.rdx", "*.run.xml", "*.wdx", "*.ldx", "*.out"],
-			"path": "."
+			"path": ".",
+			"folder_exclude_patterns": ["_minted-*"]
 		},
 	],
 }

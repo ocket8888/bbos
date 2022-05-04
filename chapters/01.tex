@@ -1,5 +1,4 @@
 \chapter{Building Blocks: Basic Data Types}
-\lstset{style=BrenMat}
 
 Chapter One outlines some basic datatypes and functional syntax used throughout the rest of the Book. Many of the function definitions herein use extremely loose syntax, which is all that's necessary for an introductory chapter. The only true reason this chapter exists is an exercise in rigor for those who enjoy such things, and a refresher course in basic concepts for those who may have forgotten. In other chapters, a level of knowledge consistent with mid-high school or higher will be assumed, and in even later chapters, an understanding of material in sections indicated at the beginning of those chapters.
 
@@ -10,12 +9,12 @@ Functions are incredibly useful constructs throughout mathematics, the natural s
 computer science. Functions take any number of inputs, or arguments, usually performing operations on those arguments to
 produce an output. The definition of a function takes the following form:
 \begin{center}
-\begin{lstlisting}[language=C,caption=Function Example,label=lst:funcEx]
 type FunctionName[type ArgumentName0, type ArgumentName1, ... type ArgumentNameN]{
 	Operations;
 	return Possible Output;
 }
-\end{lstlisting}
+\begin{minted}{python}
+\end{minted}
 \end{center}
 
 As seen above, the first word is "type," which refers to the type of data that the result, or output, of the function will be. In later chapters we will define more of these data-types, but for now we'll introduce the most simple.
@@ -30,9 +29,9 @@ Functions are used in a similar manner to this throughout many computer science 
 \ref{lst:funcEx} to be reminiscent of those languages. Please note that the above is NOT representative of any programming language, it is merely a way of organizing definitions of mathematical operations. \\
 The way a function is used is called "calling" that function, and it takes the following form:
 \begin{center}
-\begin{lstlisting}[language=C, caption=Function Call Example, label=lst:funcCallEx]
 FunctionName[ArgumentName0, ArgumentName1, ... ArgumentNameN]
-\end{lstlisting}
+\begin{minted}{python}
+\end{minted}
 \end{center}
 The first word this time is "FunctionName," which differs from \ref{lst:funcEx} in that it does not specify a type. Since a function that does not exist cannot be used, the type of the function's result has already been set, and does not need to be specified again. \\
 This function call also differs from \ref{lst:funcEx} in that it's arguments are not typed. Just as the function type need not be respecified, the type of the arguments has already been decided, and the burden of remembering which arguments are what type rests on the shoulders of the person writing the function call.
@@ -50,11 +49,11 @@ Our starting point isn't to begin defining the integer, but to describe a new da
 Don't worry about the definition of $0$'s value right now, that will become apparent shortly. \\
 Every other whole number can be obtained from a recursive definition using the so-called "Successor Function" in the following way:
 \begin{center}
-\begin{lstlisting}[language=C, caption=Successor Function,label=lst:sucFunc]
+\begin{minted}{python}
 wn SuccessorFunction[wn n]{
 	return the next successive whole number
 }
-\end{lstlisting}
+\end{minted}
 \end{center} 
 This can also be expressed in the following way:
 \begin{center}
@@ -69,11 +68,11 @@ This implies that the numbers $0$-$9$ are just symbols attributed to the whole n
 
 It is easy to see at this point how simple arithmetic operations can be defined. The difference between operations and functions is largely immaterial, in fact it is useful to define operations as functions first, then show the symbol. For instance, addition can be described in the following way:
 \begin{center}
-\begin{lstlisting}[language=C,caption=Addition Function,label=lst:addFunc]
+\begin{minted}{python}
 wn PlusOne[wn x]{
 	return SuccessorFunction[x];
 }
-\end{lstlisting}
+\end{minted}
 Output: $x+1$
 \end{center}
 So as seen above, adding one to a number is the same as calling the Successor Function on it (which may have been obvious by now). Then adding a number greater than one to some whole number 'x' is as simple as calling the successor function that many times. We can now easily define a symbol '+' to represent calling the successor function x times on a whole number y if given in the form $x+y$. At this point it is useful to note that
@@ -86,20 +85,20 @@ It is here that the value of $0$ becomes apparent. For example, consider the sta
 \subsection{Negative Numbers and Subtraction}
 Before going any further, we will develop our understanding of whole numbers into an understanding of integers. Like with whole numbers, the easiest place to start is with a function.
 \begin{center}
-\begin{lstlisting}[language=C,caption=The Predecessor Function,label=lst:predFunc]
+\begin{minted}{python}
 wn PredecessorFunction[wn x]{
 	Find a number y such that SuccessorFunction[y]=x;
 	return y;
 }
-\end{lstlisting}
+\end{minted}
 \end{center}
 The Predecessor Function, it would seem, only undoes the Successor Function, and as such is sometimes called the Inverse Successor Function. Like with addition, it may be useful to think of the operation of subtraction as an implementation of this function.
 \begin{center}
-\begin{lstlisting}[language=C,caption=Minus One Function,label=lst:minusOneFunc]
+\begin{minted}{python}
 wn MinusOne[wn x]{
 	return PredecessorFunction[x];
 }
-\end{lstlisting}
+\end{minted}
 \end{center}
 The above function can be used to describe $x-1$, and in general subtraction of a whole number x from a whole number y is defined as calling the Predecessor Function x times on y, given the form $y-x$. \\
 It is now easy to define all negative numbers as simply a number for which the operations of the Successor Function and the Predecessor Function are switched. That is to say that for a number x and a number y, $y+x=y- Negative x$. There exists then a number z for every y such that $y+z=0$, which means that when adding the negative number z to y, the Predecessor Function is called on y exactly as many times as the Successor Function must be called on $0$ to obtain the value y. This is the definition of Negative y, meaning $z=Negative y$ \\
@@ -206,22 +205,22 @@ From here, we must next look for grouping symbols, and the ones we find are thos
 \subsection{Division}
 To put it as simply as possible, division is the operation that undoes multiplication. However, similar to subtraction, order matters. For instance, if z is the output of $x\times y$, then the output of dividing z by x is y. Similarly, the output of z divided by y is x. Because order matters, dividing y by z is \emph{not} the same as dividing z by y. Here is a loosely-written function that helps to describe that process.
 \begin{center}
-\begin{lstlisting}[language=C,caption=Division Function,label=lst:divFunc]
+\begin{minted}{python}
 int DivideBy[int x, int y]{
 	return the integer y is multiplied by to obtain x;
 }
-\end{lstlisting}
+\end{minted}
 \end{center}
 There are, however, many cases where there is no integer that y can be multiplied by to obtain x. Consider, for example, the division of $5$ by $3$ (there is no integer y such that y times 3 outputs 5). In these cases, the output is left in the form of what is known as a 'fraction'. Fractions take the form $\frac{x}{y}$ or $x/y$ when dividing x by y. The difference between them is accounted for by the versatility of the environment in which it is written, $\frac{x}{y}$ is the preferred form, but $x/y$ may be used when such typesetting is unavailable. \\
 In a base ten number system, it becomes bothersome to always write fractions this way, but to understand it we must first describe some properties of fractions. \\
 The value of a fraction is invariant under multiplication of both the top (called the 'numerator') and the bottom (called the 'denominator') by the same integer. Because division is merely the inverse of multiplication, the same must be true for division.
 \begin{center}
-\begin{lstlisting}[language=C,caption=Fraction Properties,label=lst:fracProp,mathescape]
+\begin{minted}{python}
 int x;
 int y;
 int c;
 $x / y = \frac{x}{y} = \frac{x\times c}{y \times c} = \frac{x / c}{y / c}$
-\end{lstlisting}
+\end{minted}
 \end{center}
 The fraction is also a type of grouping symbol, which can be useful to avoid clutter caused by parenthesis. This means that
 \begin{center}
