@@ -16,6 +16,7 @@ main.pdf
 **.log
 **.aux
 **.swp
+**.pyg
 
 **/__pycache__/**
 
