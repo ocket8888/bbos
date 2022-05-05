@@ -2,7 +2,7 @@
 	"folders":
 	[
 		{
-			"file_exclude_patterns": ["*.idx", "*.log", "*.adx", "*.bib", "*.aux", "*.toc", "*.sdx", "*.rdx", "*.run.xml", "*.wdx", "*.ldx", "*.out"],
+			"file_exclude_patterns": ["*.idx", "*.log", "*.adx", "*-blx.bib", "*.aux", "*.toc", "*.sdx", "*.rdx", "*.run.xml", "*.wdx", "*.ldx", "*.out"],
 			"path": ".",
 			"folder_exclude_patterns": ["_minted-*", "__pycache__"]
 		},

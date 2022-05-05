@@ -1,22 +1,24 @@
-main.adx
 main.bbl
 main.blg
-main-blx.bib
-main.idx
-main.ldx
-main.out
-main.rdx
-main.run.xml
-main.sdx
-main.toc
-main.wdx
 texput.log
+
+algebra.pdf
 main.pdf
 
-**.log
+**-blx.bib
+**.adx
 **.aux
-**.swp
+**.idx
+**.ldx
+**.log
+**.out
 **.pyg
+**.rdx
+**.run.xml
+**.sdx
+**.swp
+**.toc
+**.wdx
 
 **/__pycache__/**
 
