@@ -1,13 +1,9 @@
-dtklogos.log
-.gitignore.swp
 main.adx
-main.aux
 main.bbl
 main.blg
 main-blx.bib
 main.idx
 main.ldx
-main.log
 main.out
 main.rdx
 main.run.xml
@@ -15,12 +11,13 @@ main.sdx
 main.toc
 main.wdx
 texput.log
+main.pdf
 
-chapters/01.aux
-chapters/.01.tex.swp
-chapters/02.aux
-chapters/03.aux
-wget-log
+**.log
+**.aux
+**.swp
+
+**/__pycache__/**
 
 *.sublime-*
 

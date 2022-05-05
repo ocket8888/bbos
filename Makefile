@@ -5,18 +5,4 @@ main.pdf: *.tex *.sty chapters/*.tex
 
 clean:
 	$(RM) -r _minted-main/
-	$(RM) chapters/*.aux
-	$(RM) chapters/*.aux
-	$(RM) main-blx.bib
-	$(RM) main.adx
-	$(RM) main.aux
-	$(RM) main.idx
-	$(RM) main.ldx
-	$(RM) main.log
-	$(RM) main.out
-	$(RM) main.rdx
-	$(RM) main.run.xml
-	$(RM) main.sdx
-	$(RM) main.toc
-	$(RM) main.wdx
-
+	$(RM) chapters/*.aux chapters/*.aux main-blx.bib main.adx main.aux main.idx main.ldx main.log main.out main.rdx main.run.xml main.sdx main.toc main.wdx main.pdf
