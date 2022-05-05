@@ -10,7 +10,7 @@
 \newcommand{\lsISSN}{??}
 \newcommand{\lsISBN}{000-0-000000-00-0}
 \newcommand{\lsURL}{http://langsci-press.org/catalog}
-\newcommand{\lsSeries}{eotms}
+\newcommand{\lsSeries}{bbos}
 \newcommand{\lsSpineBreadth}{20mm}
 \newcommand{\lsOutput}{long}
 \newcommand{\lsFontsize}{11pt}
@@ -42,7 +42,7 @@
 \DeclareStringOption{url}[http://langsci-press.org/catalog]
 	\define@key{langsci}{url}{%
 		\renewcommand{\lsURL}{#1}}
-\DeclareStringOption{series}[eotms]
+\DeclareStringOption{series}[bbos]
 	\define@key{langsci}{series}{%
 		\renewcommand{\lsSeries}{#1}}
 \DeclareStringOption{output}[long]
@@ -259,7 +259,7 @@
 myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li
 lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe
 al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.}
-\newcommand{\lsBackTitle}{Back Title}
+\newcommand{\lsBackTitle}{\@title}
 
 \newcommand{\BackTitle}[1]{\renewcommand{\lsBackTitle}{#1}}
 \newcommand{\BackBody}[1]{\renewcommand{\lsBackBody}{#1}}
