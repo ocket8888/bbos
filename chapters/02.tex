@@ -1,152 +1,49 @@
 \chapter{Formal Syntax and Operators}
-This chapter is not really meant to be read from top to bottom, only to be used as a reference when reading later chapters. If the way anything is worded is confusing, this chapter is meant to act as a guide. Certain similarities to computer science may become apparent in the way that mathematical expressions are written, and this is not a coincidence but it cannot be stressed enough that this is \emph{not} a programming language (yet).
+This chapter is not really meant to be read from top to bottom, only to be used as a reference when reading later chapters. If the way anything is worded is confusing, this chapter is meant to act as a guide.
+
+\section{Relational Operators}\label{sec:relational-operators}
+\begin{description}
+	\item[$\rightarrow$/$\Longrightarrow$]
+		"Produces", "implies", or more generally "when conditions on the left are satisfied, the direct logical outcome is on the right". Used in boolean arithmetic, chemistry, physics.
+	\item[$\leftarrow$/$\Longleftarrow$]
+		"Produced by", "implied by", or more generally "when conditions on the right are satisfied, the direct logical outcome is on the left". Used very rarely in boolean arithmetic, more commonly: chemistry, physics."
+	\item[$\iff$]
+		"Produces and is produced by", "implies and is implied by", often "if and only if", or more generally "conditions on the right occur as a direct result of conditions on the left, and not as a direct result of anything else". Used in boolean arithmetic and chemistry.
+	\item[$\ne$]
+		Not equal; the opposite of $=$. Used everywhere $=$ is used.
+	\item[$\approx$]
+		Approximately equal. Used wherever $=$ is used.
+	\item[$\propto$]
+		"Proportional to". Used most commonly in pure mathematics, but can be seen in any discipline that uses $=$.
+	\item[$\sim$/$\simeq$]
+		"Similar to", "same shape" or "equal in proportion (but not magnitude)". Used primarily in basic geometry.
+	\item[$\cong$]
+		"Congruent to", "same shape and size", or "equal in both proportion and magnitude". Used primarily in basic geometry.
+\end{description}
 
 \section{Boolean Logic}
-A basic datatype not covered in Chapter 1, but is also extremely useful is what's known as a 'boolean,' abbreviated 'bool'. This is much simpler to define than a set of numbers, because rather than infinite possible values, there are only two: true or false. This is useful in cases when operations are to be preformed conditionally, or procedurally. For example, the famous Dirac Delta function models the density of a point-mass and has the following form:
-\begin{minted}{python}
-real $\delta$[real x]{
-	if[x==0]{
-		return Infinity;
-	}
-	else{
-		return 0;
-	}
-}
-\end{minted}
-The first thing immediately apparent is the use of the new function 'if'. 'if' is a special function that allows preforming of mathematical operations within the curly braces that follow it if and only if the expression inside of its arguments evaluates to true. 'if' only takes one argument, though there is no limit to the size of the logical expression that can be passed.
-\subsection{Boolean Operators}
-In order to understand the types of arguments that 'if' can take, we must first define some functions that return bool's. The one used in \ref{lst:dirdelFunc} will be a good place to start.
-\begin{minted}{python}
-bool Equivalent[any x, any y]{
-	return true if x is equivalent to y, or false if not;
-}
-\end{minted}
-The symbol '==' is used to denote calling Equivalent[x,y] given the form 'x==y'. This is different than '=' because '=' implies assigning a value, whereas after finding the output of 'x==y' the value of x does not become y, or vice-versa. Note that the type used to pass these arguments is 'any' which predictably means that they may be of any type. This is because it is easy to tell if two things are the same type, and if they are not then they cannot be equivalent, which allows sometimes for very easy evaluation of Equivalent's output. \\
-The next two operators are very similar, and likely very familiar. \\
-The following function is another extremely common argument to 'if'.
-\begin{minted}{python}
-bool GreaterThan[num x, num y]{
-	if[x-y is negative]{
-		return false;
-	}
-	return true;
-}
-\end{minted}
-Calling this function is typically denoted as 'x>y', this being equivalent to 'GreaterThan[x,y]'. Predictably, this returns true if x is, in fact, greater in value than y. This function has the counterpart LessThan, defined below.
-\begin{minted}{python}
-bool LessThan[num x, num y]{
-	if[y-x is negative]{
-		return false;
-	}
-	return true;
-}
-\end{minted}
-This function is usually called by writing 'x<y', which is the same as 'LessThan[x,y]'. In contrast to \ref{lst:gThanFunc}, this returns true if x is \emph{less} than y, and false otherwise. \\
-For now, these three operations will be sufficient to describe \ref{lst:dirdelFunc}. However, there are two things that have been left out. First is the value Infinity. Infinity is a real number that has the special properties:
-\begin{itemize}
-\item For all 'x', as long as x is not Infinity, Infinity>x outputs true.
-\item For all 'x', Infinity+x outputs Infinity.
-\item For all 'x', Infinity-x outputs Infinity.
-\end{itemize}
-The other bit of information not yet explained is the 'else' in \ref{lst:dirdelFunc}. 'else' is a special function that takes no arguments, and can \emph{only be placed immediately following an 'if' block}. Note that an 'if' does not require an 'else', the latter is entirely optional. If included, the curly braces following an 'else' enclose a set of operations to be preformed if the argument to 'if' evaluates to false.
+A basic datatype not covered in Chapter 1, but is also extremely useful is what's known as a 'boolean,' which is represented in Python as the type \code{bool}. This is much simpler to define than a set of numbers, because rather than infinite possible values, there are only two: true or false. This is useful in cases when operations are to be preformed conditionally. For example, the famous Dirac Delta function models the density of a point-mass. A definition for this function may be found in Equation \ref{func:dirac}/Listing \ref{code:dirac}.
 
-\section{Boolean Operators}
-This is a comprehensive list of boolean operators and their definitions, as well as examples. The list begins with those above, and goes on to list every operator that can be used to compare two values. Note that some of these may deal with topics not covered yet in the Book. \\
-\begin{itemize}
-\item if/else if/else \\
-\begin{itemize}
-\item if\\
-\begin{center}
-'if' is a special function that allows preforming of mathematical operations within the curly braces that follow it if and only if the expression inside of its arguments evaluates to true. 'if' only takes one argument, though there is no limit to the size of the logical expression that can be passed. \\
-\end{center}
-Example:\\
+\begin{equation}\label{func:dirac}
+\delta(x)=
+\begin{cases}
+0,&x\ne 0\\\\
+\infty,&x=0
+\end{cases}
+\end{equation}
+
+\begin{listing}[h]
+\caption{The Dirac Delta function}\label{code:dirac}
 \begin{minted}{python}
-if[Expression]{
-	Operations;
-}
+def DiracDelta(x: float) -> float:
+	if x == 0:
+		return float("infinity");
+	return 0.
 \end{minted}
-\begin{center}
-If 'Expression' turns out to be true, 'Operations' will be preformed, otherwise they will not.
-\end{center}
-\item else if\\
-\begin{center}
-'else if' is a special function that can only appear immediately following an 'if' block or a previous 'else if' block. Unlike 'if', the expression that else if takes as an argument is only evaluated if the previous 'if' or 'else if's expression evaluated to false. This means that if an 'else if' follows an 'else if' who's expression was not evaluated, then that following 'else if's expression is not evaluated and therefore the operations enclosed in curly braces are not preformed.
-\end{center}
-Example:\\
-\begin{minted}{python}
-if[Expression1]{
-	Operations1;
-}
-else if[Expression2]{
-	Operations2;
-}
-\end{minted}
-\begin{center}
-In the above example, Operations2 is/are preformed if and only if Expression1 evaluated to true, \emph{and} Expression2 evaluated to false.
-\end{center}
-\item else\\
-\begin{center}
-'else' is a special function that takes no arguments, and can \emph{only be placed immediately following an 'if' block}. Note that an 'if' does not require an 'else', the latter is entirely optional. If included, the curly braces following an 'else' enclose a set of operations to be preformed if the argument to 'if' evaluates to false.
-\end{center}
-Example:\\
-\begin{minted}{python}
-if[Expression1]{
-	Operations1;
-}
-else if[Expression2]{
-	Operations2;
-}
-else{
-	Operations3;
-}
-\end{minted}
-\begin{center}
-In the above example, Operations3 is/are preformed if and only if Expression1 and Expression2 both evaluated to false.
-\end{center}
-\end{itemize}
-\item == / < / <= / > / >=
-\begin{itemize}
-\item ==
-\begin{center}
-'==' takes two inputs, and returns true if they are equivalent, false if they are not.
-\end{center}
-Examples:
-\begin{minted}{python}
-if[$1==2$]{
-	Operations;
-}
-\end{minted}
-\begin{center}
-In the above example, Operations is/are not preformed, because $2$ is not equivalent to $1$.
-\end{center}
-\begin{minted}{python}
-if[$1==1$]{
-	Operations;
-}
-\end{minted}
-\begin{center}
-In the above example, Operations is/are preformed, because $1$ is equivalent to $1$.
-\end{center}
-\item < \\
-\begin{center}
-'<' takes two arguments, and returns true if the first is less than the second, false otherwise.
-\end{center}
-Examples:
-\begin{minted}{python}
-if[$1<2$]{
-	Operations;
-}
-\end{minted}
-\begin{center}
-In the above example, Operations is/are preformed, because $1$ is less than $2$.
-\end{center}
-\begin{minted}{python}
-if[$1<1$]{
-	Operations;
-}
-\end{minted}
-\begin{center}
-In the above example, Operations is/are not preformed, because $1$ is not less than $1$.
-\end{center}
-\end{itemize}
-\end{itemize}
+\end{listing}
+
+The expressions $x=0$, $x\ne0$, and equivalently \code{x == 0} are all actually simple functions that have an input of some real number and output boolean values.
+
+\subsection{Boolean Operators}
+Just like $=$, all of the other operators described in \ref{sec:relational-operators} are "infix" (meaning "goes in between operands") operators that take two inputs and produce a boolean output.
+This is a comprehensive list of boolean operators not already described in \ref{sec:relational-operators} and their definitions, as well as examples.
