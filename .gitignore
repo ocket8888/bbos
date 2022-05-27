@@ -8,7 +8,11 @@ main.pdf
 **-blx.bib
 **.adx
 **.aux
+**.fdb_latexmk
+**.fls
 **.idx
+**.ilg
+**.ind
 **.ldx
 **.log
 **.out
@@ -17,8 +21,10 @@ main.pdf
 **.run.xml
 **.sdx
 **.swp
+**.synctex.gz
 **.toc
 **.wdx
+**.xdv
 
 **/__pycache__/**
 
